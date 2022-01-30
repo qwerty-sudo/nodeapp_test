@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: gprec/nodejs:21
+        image: gprec/nodejs:latest
         port:
         - containerPort: 3000
         
