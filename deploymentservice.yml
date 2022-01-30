@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: thetips4you/nodeapp:21
-        ports:
+        image: gprec/nodejs:21
+        port:
         - containerPort: 3000
         
         
