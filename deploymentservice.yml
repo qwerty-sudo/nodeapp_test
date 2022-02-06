@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: gprec/docker-test:11
+        image: nginx
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         
         
 ---
@@ -33,6 +33,6 @@ spec:
   type: NodePort
   ports:
   - protocol: TCP
-    port: 5000
-    targetPort: 3000
+    port: 80
+    targetPort: 80
     nodePort: 31110
