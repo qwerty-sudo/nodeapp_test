@@ -19,6 +19,8 @@ spec:
         image: nginx
         ports:
         - containerPort: 80
+      imagePullSecrets:
+        - name: docker-cred
         
         
 ---
@@ -36,3 +38,14 @@ spec:
     port: 80
     targetPort: 80
     nodePort: 31110
+   
+---
+
+apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJncHJlYyIsInBhc3N3b3JkIjoibmF2ZWVuQDk2IiwiYXV0aCI6IlozQnlaV002Ym1GMlpXVnVRRGsyIn19fQ==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: docker-cred
+type: kubernetes.io/dockerconfigjson
